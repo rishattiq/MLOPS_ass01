@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the source code from the repository
-                git credentialsId: '395e7040-8063-497f-b373-724e49a180e6', url: 'https://github.com/rishattiq/MLOPS_Assignment01.git'
+                git credentialsId: '395e7040-8063-497f-b373-724e49a180e6', url: 'https://github.com/rishattiq/MLOPS_ass01.git'
             }
         }
         
