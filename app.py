@@ -63,20 +63,12 @@ model.add(Dense(num_classes))
 model.add(Activation("softmax"))
 
 # Compile the model
-model.compile(
-    loss="categorical_crossentropy",
-    optimizer="adam",
-    metrics=["accuracy"]
-)
+model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
 
 model.summary()
 
 # Plot the model architecture
-plot_model(
-    model, 
-    to_file="mlp-mnist.png", 
-    show_shapes=True
-)
+plot_model(model, to_file="mlp-mnist.png", show_shapes=True)
 
 # Train the model
 model.fit(x_train, y_train, epochs=20, batch_size=batch_size)
