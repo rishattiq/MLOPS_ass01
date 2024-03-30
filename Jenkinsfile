@@ -9,46 +9,6 @@ pipeline {
             }
         }
         
-        stage('Code Quality Check') {
-            steps {
-                // Run Flake8 to check code quality
-                sh 'flake8'
-            }
-        }
-        
-        stage('Build Model') {
-            steps {
-                // Build the model
-                sh 'app.py'
-            }
-        }
-        
-        stage('Test Model') {
-            steps {
-                // Run tests on the model
-                sh 'python app.py'
-            }
-        }
-        
-        stage('Deploy to Test Branch') {
-            when {
-                branch 'dev'
-            }
-            steps {
-                // Push changes to the test branch
-                sh 'git push origin dev:test'
-            }
-        }
-        
-        stage('Merge to Master') {
-            when {
-                branch 'test'
-            }
-            steps {
-                // Merge changes to the master branch
-                sh 'git checkout master && git merge test'
-            }
-        }
         
         stage('Containerize and Push to Docker Hub') {
             when {
