@@ -1,4 +1,0 @@
-matplotlib
-keras
-tensorflow
-pydot
