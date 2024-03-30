@@ -39,5 +39,5 @@ class TestMNISTModel(unittest.TestCase):
         self.assertGreaterEqual(accuracy, 0.9, "Model accuracy is less than 90%")
 
 
-if name == "main":
+if __name__== "main":
     unittest.main()
